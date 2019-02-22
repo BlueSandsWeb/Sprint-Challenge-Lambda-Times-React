@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Tabs from './Tabs';
 import Cards from './Cards';
+import PropTypes from 'prop-types';
 
 // Importing our tab and card data. No need to change anything here.
 import { tabData, cardData } from '../../data';
@@ -10,9 +11,9 @@ export default class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedTab: 'all',
       tabs: [],
       cards: [],
-      selectedTab: 'all',
     };
   }
   
@@ -54,7 +55,7 @@ export default class Content extends Component {
       <div className="content-container">
         {/* Add 2 props to the Tabs component, selectedTab` that includes the currently selected tab and `selectTabHandler` that includes the function to change the selected tab */}
         <Tabs tabs={this.state.tabs} selectTabHandler={this.selectTabHandler} selectedTab={this.state.selectedTab}/>
-        <Cards cards={this.filterCards} cardsData={this.state.cards}/>
+        <Cards cardsData={this.state.cards}/>
       </div>
     );
   }
