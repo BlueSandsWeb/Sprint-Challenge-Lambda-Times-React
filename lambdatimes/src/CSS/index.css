@@ -185,6 +185,7 @@ body {
   justify-content: none;
   align-items: center;
   flex-direction: row;
+  
 }
 .tabs .topics .title {
   font-size: 12px;
